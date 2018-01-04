@@ -1,0 +1,70 @@
+package com.accolite.servelet;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class ServeletDemo
+ */
+public class ServeletDemo extends HttpServlet {
+	
+	private static final long serialVersionUID = 1L;
+
+    /**
+     * Default constructor. 
+     */
+    public ServeletDemo() {
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		response.setContentType("text/html");
+		PrintWriter pw = response.getWriter();
+		String connectionURL = "jdbc:mysql://localhost:3306/au";
+		Connection connection;
+		try{
+			String id = request.getParameter("idservlets_streams_exercises");
+			String uname = request.getParameter("name");
+			String password = request.getParameter("age");
+			pw.println(uname);
+			pw.println(password);
+			Class.forName("com.mysql.jdbc.Driver").newInstance();
+			connection = DriverManager.getConnection(connectionURL, "root", "root");
+			PreparedStatement pst = connection.prepareStatement("insert into servlets_streams_exercises values(?,?,?)");
+			pst.setString(1,id);
+			pst.setString(2,uname);
+			pst.setString(3,password);
+			int i = pst.executeUpdate();
+			if(i!=0){
+				pw.println("<br>Date has been inserted in to Datebase");
+			}
+			else{
+				pw.println("failed to insert the data");
+			}
+		}
+		catch (Exception e){
+			pw.println(e);
+		}	
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}

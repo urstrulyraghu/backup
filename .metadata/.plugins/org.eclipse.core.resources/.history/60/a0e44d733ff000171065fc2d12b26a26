@@ -1,0 +1,11 @@
+package com.accolite.soap;
+
+public class HelloWorldImpl implements SoapService {
+
+	@Override
+	public String getHelloWorldString(String service) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

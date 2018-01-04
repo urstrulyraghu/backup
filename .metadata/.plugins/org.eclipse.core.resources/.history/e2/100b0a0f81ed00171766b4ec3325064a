@@ -1,0 +1,30 @@
+package com.accolite.miniau;
+
+import java.util.Stack;
+
+public class Phone {
+
+	private Stack<String> calls = new Stack<String>();
+	
+	public void dial(String number) {
+		calls.push(number);
+	}
+	
+	public void call() {
+		System.out.println("Calling " + calls.peek() + "\n");
+	}
+	
+	public void callHistory() {
+		System.out.println("Last Call was made to : " + calls.peek() + "\n");
+	}
+	
+	public void dialHistory() {
+		System.out.println(calls);
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

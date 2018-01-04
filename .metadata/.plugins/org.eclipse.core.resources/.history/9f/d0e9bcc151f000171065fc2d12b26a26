@@ -1,0 +1,10 @@
+package com.accolite.soap;
+
+public class PersonsPubl {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

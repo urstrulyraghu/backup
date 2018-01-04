@@ -1,0 +1,7 @@
+package com.accolite.message.service;
+
+public class Service {
+	public List<Message> getMessage(String msg) {
+		List list = new ArrayList<Message>();
+	}
+}

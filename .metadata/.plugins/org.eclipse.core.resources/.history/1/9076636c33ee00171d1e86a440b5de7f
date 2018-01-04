@@ -1,0 +1,16 @@
+package com.accolite.parser;
+
+import java.util.Date;
+
+public class License {
+	 Date Date_Status_Effective;
+	 String License_Class;
+	 int License_Class_Code;
+	 Date License_Expiration_Date;
+	 Date License_Issue_Date;
+	 int License_Number;
+	 char License_Status;
+	 char Resident_Indicator;
+	 String State_Code;
+	 int State_ID;
+}

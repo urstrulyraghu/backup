@@ -1,0 +1,16 @@
+/**
+ * 
+ */
+package com.accolite.soap;
+
+import javax.jws.WebService;
+import javax.jws.soap.SOAPBinding;
+/**
+ * @author Hyderabar Intern
+ *
+ */
+@WebService
+@SOAPBinding(style=style.RPC)
+public interface SoapService {
+	String getHelloWorldString(String service);
+}

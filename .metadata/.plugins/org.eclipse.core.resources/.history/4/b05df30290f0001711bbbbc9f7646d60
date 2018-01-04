@@ -1,0 +1,27 @@
+package profile.users.Service;
+
+import java.util.ArrayList;
+import java.util.List;
+import javax.xml.bind.annotation.XmlType;
+
+import profile.users.Profile.Profile;
+
+@XmlType(name="")
+public class ProfileService extends Profile{
+	
+		ArrayList<Profile> list = new ArrayList<Profile>();
+
+		public List<Profile> getAllMessage() {
+			list.add(new Profile("raghu", 21, "abc@gm.com"));
+			return list;
+		}
+		
+		public Profile getMessage(String pName) {
+			for(Profile m : list) {
+				if(m.getProfileName().equals(pName)) {
+					return m;
+				}
+			}
+			return null;
+		}
+}

@@ -1,0 +1,26 @@
+package profile.users.Service;
+
+import java.util.ArrayList;
+import java.util.List;
+import javax.xml.bind.annotation.XmlType;
+
+public class ProfileService {
+	
+	@XmlType(name="")
+	public class ProfileService extends Profile{
+		ArrayList<Message> list = new ArrayList<Message>();
+
+		public List<Message> getAllMessage() {
+			list.add(new Message(1,"raghu"));
+			return list;
+		}
+		
+		public Message getMessage(int id) {
+			for(Message m : list) {
+				if(m.getEmpId() == id) {
+					return m;
+				}
+			}
+			return null;
+		}
+}

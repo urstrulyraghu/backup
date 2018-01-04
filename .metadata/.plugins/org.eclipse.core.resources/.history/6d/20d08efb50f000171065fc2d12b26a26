@@ -1,0 +1,6 @@
+package com.accolite.soap;
+
+public class Person {
+	int Id;
+	String Name;
+}

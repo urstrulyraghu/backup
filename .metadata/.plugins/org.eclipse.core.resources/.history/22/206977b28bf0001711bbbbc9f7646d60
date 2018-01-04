@@ -1,0 +1,34 @@
+package profile.users.Resource;
+
+import java.util.List;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+
+import Demo.message.Message;
+import Demo.service.Service;
+import profile.users.Service.ProfileService;
+
+@Path("profiles")
+public class ProfileResource {
+	public class MessageResource {
+		ProfileService service = new ProfileService();
+		
+		@GET
+		@Produces(MediaType.APPLICATION_XML)
+		public List<Message> getMessages()
+		{
+			return service.getAllMessage();
+		}
+		
+		/*@GET
+		@Path("/{messageId}")
+		@Produces(MediaType.TEXT_PLAIN)
+		public Message getMessage(@PathParam("messageId") int id) {
+			return service.getMessage(id);
+		}*/
+	}
+
+}

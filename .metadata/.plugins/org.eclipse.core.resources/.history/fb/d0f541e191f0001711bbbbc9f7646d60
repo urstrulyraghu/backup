@@ -1,0 +1,40 @@
+package profile.users.Resource;
+
+import java.util.List;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+
+import profile.users.Profile.Profile;
+import profile.users.Service.ProfileService;
+
+@Path("profiles")
+public class ProfileResource {
+		ProfileService service = new ProfileService();
+		
+		@GET
+		@Produces(MediaType.APPLICATION_XML)
+		public List<Profile> getMessages()
+		{
+			return service.getAllProfiles();
+		}
+		
+		@GET
+		@Path("/{pName}")
+		@Produces(MediaType.APPLICATION_XML)
+		public Profile getMessage(@PathParam("messageId") String pName) {
+			return service.getProfile(pName);
+		}
+		
+		@POST
+		@Path("/{pName}/{age}/{emailId}")
+		@Produces(MediaType.APPLICATION_XML)
+		public void postProfile() 
+		{
+			
+		}
+	}

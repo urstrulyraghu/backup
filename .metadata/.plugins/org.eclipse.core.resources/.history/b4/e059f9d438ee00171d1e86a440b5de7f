@@ -1,0 +1,46 @@
+package com.accolite.parser;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Date;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+
+public class XMLParser {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		try {
+			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+			DocumentBuilder db = dbf.newDocumentBuilder();
+			Document dom = db.parse(new File("C:\\Users\\Hyderabar Intern\\Desktop\\MINI AU -2018\\Day 2 - Java\\license.xml"));
+			ArrayList<License> licenses = new ArrayList<>();
+			
+			NodeList nList = dom.getElementsByTagName("License");
+			for(int i = 0; i < nList.getLength(); i++) {
+				Element ele = (Element)nList.item(i);
+				License license = new License();
+				license.setDate_Status_Effective(ele.getAttribute("Date_Status_Effective"));
+				license.setLicense_Class(ele.getAttribute("License_Class"));
+				license.setLicense_Class_Code(Integer.parseInt(ele.getAttribute("License_Class_Code")));
+				license.setLicense_Expiration_Date(ele.getAttribute("License_Expiration_Date"));
+				license.setLicense_Issue_Date(ele.getAttribute("License_Issue_Date"));
+				license.setLicense_Number(Integer.parseInt(ele.getAttribute("License_Number")));
+				license.setResident_Indicator(ele.getAttribute("Resident_Indicator").charAt(0));
+				license.setState_Code(ele.getAttribute("State_Code"));
+				license.setState_ID(Integer.parseInt("State_Id"));
+			}
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+	}
+
+}

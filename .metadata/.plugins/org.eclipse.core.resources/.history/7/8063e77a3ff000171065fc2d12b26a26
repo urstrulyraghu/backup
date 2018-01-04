@@ -1,0 +1,14 @@
+package com.accolite.soap;
+
+import javax.jws.WebService;
+
+@WebService(endpointInterface="HelloWorld")
+public class HelloWorldImpl implements SoapService {
+
+	@Override
+	public String getHelloWorldString(String service) {
+		// TODO Auto-generated method stub
+		return 
+	}
+
+}

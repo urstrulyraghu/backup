@@ -1,0 +1,28 @@
+package profile.users.Profile;
+
+public class Profile {
+	String profileName;
+	int age;
+	String emailId;
+	
+	public String getProfileName() {
+		return profileName;
+	}
+	public void setProfileName(String profileName) {
+		this.profileName = profileName;
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+	public String getEmailId() {
+		return emailId;
+	}
+	public void setEmailId(String emailId) {
+		this.emailId = emailId;
+	}
+	
+	
+}

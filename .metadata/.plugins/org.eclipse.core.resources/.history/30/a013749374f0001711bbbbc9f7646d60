@@ -1,0 +1,14 @@
+package com.accolite.message.service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.accolite.message.Message;
+
+public class Service {
+	public List<Message> getMessage(String msg) {
+		List list = new ArrayList<Message>();
+		list.add(new Message(1,"raghu"));
+		return list;
+	}
+}

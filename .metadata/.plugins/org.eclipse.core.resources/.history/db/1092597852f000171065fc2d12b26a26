@@ -1,0 +1,38 @@
+package com.accolite.soap;
+
+import javax.jws.WebService;
+
+@WebService(endpointInterface="com.accolite.soap.PersonInt")
+public class PersonImpl implements PersonInt {
+
+	@Override
+	public void createPerson(String Name, int age) {
+		// TODO Auto-generated method stub
+		Person p = new Person(Name,age);
+		PersonsPubl.persons.add(p);
+	}
+
+	@Override
+	public void deletePerson(String Name) {
+		// TODO Auto-generated method stub
+		for(Person p : PersonsPubl.persons) {
+			
+		}
+		
+		PersonsPubl.persons.remove(PersonsPubl.persons.indexOf(o))
+
+	}
+
+	@Override
+	public void updatePerson(String Name, int age) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public String getPerson(String Name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename field &apos;profiles&apos; in &apos;profile.users.Service.ProfileService&apos; to &apos;list&apos;&#x0D;&#x0A;- Original project: &apos;users&apos;&#x0D;&#x0A;- Original element: &apos;profile.users.Service.ProfileService.profiles&apos;&#x0D;&#x0A;- Renamed element: &apos;profile.users.Service.ProfileService.list&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" delegate="false" deprecate="false" description="Rename field &apos;profiles&apos;" flags="589830" getter="false" id="org.eclipse.jdt.ui.rename.field" input="/src\/main\/java&lt;profile.users.Service{ProfileService.java[ProfileService^profiles" name="list" references="true" setter="false" stamp="1514987367756" textual="false" version="1.0"/>
+</session>

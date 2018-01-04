@@ -1,0 +1,7 @@
+package com.accolite.employees;
+
+public class Employee {
+	int empId;
+	String name;
+	
+}

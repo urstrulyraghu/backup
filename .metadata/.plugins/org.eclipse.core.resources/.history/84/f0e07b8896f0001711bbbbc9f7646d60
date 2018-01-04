@@ -1,0 +1,44 @@
+package profile.users.Resource;
+
+import java.util.List;
+
+import javax.ws.rs.Consumes;
+import javax.ws.rs.FormParam;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+
+import org.glassfish.jersey.server.JSONP;
+
+import profile.users.Profile.Profile;
+import profile.users.Service.ProfileService;
+
+@Path("profiles")
+public class ProfileResource {
+		ProfileService service = new ProfileService();
+		
+		@GET
+		@Produces(MediaType.APPLICATION_XML)
+		public List<Profile> getProfiles()
+		{
+			return service.getAllProfiles();
+		}
+		
+		@GET
+		@Path("/{pName}")
+		@Produces(MediaType.APPLICATION_XML)
+		public Profile getProfile(@PathParam("pName") String pName) {
+			return service.getProfile(pName);
+		}
+		
+		@POST
+		@Path("/{pName}")
+		@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+		public void postProfile(@PathParam("pName") String pName, @FormParam("age") int age, @FormParam("emailId") String emailId)
+		{
+			 service.postProfile(pName, age, emailId);
+		}
+	}

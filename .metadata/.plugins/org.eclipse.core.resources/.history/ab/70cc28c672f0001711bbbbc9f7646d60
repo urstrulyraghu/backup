@@ -1,0 +1,7 @@
+package com.accolite.service;
+
+public class service {
+	String getMessage(String msg) {
+		return "Hello!";
+	}
+}

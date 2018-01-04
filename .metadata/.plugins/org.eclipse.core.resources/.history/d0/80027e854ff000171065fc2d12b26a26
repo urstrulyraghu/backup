@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package com.accolite.soap;
+
+/**
+ * @author Hyderabar Intern
+ *
+ */
+public interface PersonInt {
+
+}

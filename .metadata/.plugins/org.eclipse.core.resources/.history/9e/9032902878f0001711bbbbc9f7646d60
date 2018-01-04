@@ -1,0 +1,32 @@
+package com.accolite.message.service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.xml.bind.annotation.XmlType;
+
+import com.accolite.message.Message;
+
+@XmlType(name="")
+public class Service extends Message{
+	public Service(int empId, String name) {
+		super(empId, name);
+		// TODO Auto-generated constructor stub
+	}
+
+	public Service() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	ArrayList<Message> messages = new ArrayList<>();
+
+	public List<Message> getAllMessage() {
+		ArrayList<Message> list = new ArrayList<Message>();
+		list.add(new Message(1,"raghu"));
+		return list;
+	}
+	
+	public Message getMessage(int id) {
+		return null;
+	}
+}

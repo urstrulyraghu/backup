@@ -1,0 +1,7 @@
+package profile.users.Profile;
+
+public class Profile {
+	String profileName;
+	String emailId;
+	String phoneNum;
+}
